@@ -1,6 +1,6 @@
 const config = require('../config');
 const { Pool } = require('pg')
-const { selectAllItems, insertData, updateData } = require('./querysets');
+const { selectAllItems, selectById, insertData, updateData } = require('./querysets');
 
 const pool = new Pool({
     'database': config.postgresql.database,
@@ -13,6 +13,16 @@ const pool = new Pool({
 function listAll(table){
     return new Promise((resolve, reject) => {
         const query = selectAllItems(table)
+        pool.query(query, (err, data) => {
+            if (err) return reject(err);
+            resolve(data.rows);
+        });
+    });
+};
+
+function listById(table, id){
+    return new Promise((resolve, reject) => {
+        const query = selectById(table, id)
         pool.query(query, (err, data) => {
             if (err) return reject(err);
             resolve(data.rows);
@@ -43,6 +53,7 @@ function updateItem(table, data){
 
 module.exports = {
     listAll,
+    listById,
     insertItem,
     updateItem
 }

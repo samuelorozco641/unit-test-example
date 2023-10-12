@@ -2,27 +2,22 @@ const { Router } = require('express');
 const response = require('../../network/response')
 const router = Router();
 const ctrl = require('./index');
-const tableInjected = 'test'
-const func = require('../../functions/functions')
+const tableInjected = 'houses'
 
-router.get('/suma/:num1', async (req, res) => {
-    const num1 = req.params.num1
-    const num2 = req.body.num2
-
+router.get('/list', async (req, res) => {
     try {
-        const result = func.sum(num1, num2)
-        response.success(req, res, result, 200);    
+        const id = req.params.id
+        const list = await ctrl.list(tableInjected);
+        response.success(req, res, list, 200);    
     } catch (error) {
         response.error(req, res, error.message, 500); 
     }
 })
 
-
-
-router.get('/list', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const list = await ctrl.list(tableInjected, id);
+        const list = await ctrl.listById(tableInjected, id);
         response.success(req, res, list, 200);    
     } catch (error) {
         response.error(req, res, error.message, 500); 

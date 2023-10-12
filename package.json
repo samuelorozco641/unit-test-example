@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon run api/index.js",
     "BD": "nodemon run postgresql/index.js",
-    "PM2_API_USERS": "pm2 start api/index.js --name api-users",
+    "PM2_API_ITEMS": "pm2 start api/index.js --name api-items",
     "PM2_BD": "pm2 start postgresql/index.js --name bbdd"
   },
   "author": "David Santiago Puerta B.",

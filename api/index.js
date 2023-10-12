@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const items = require('./users/network')
+const items = require('./items/network')
 const config = require('../config')
 const bodyParser = require('body-parser')
 //routes
 
 app.use(bodyParser.json())
 
-app.use('/test', items);
+app.use('/house', items);
 
 app.listen(config.api.port, () =>{
     console.log("Server Run on port: "+ config.api.port );

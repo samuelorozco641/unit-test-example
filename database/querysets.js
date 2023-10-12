@@ -1,7 +1,13 @@
-const selectAllItems = (table, id) => {
-    const pId = id
+const selectAllItems = (table) => {
     const query = 
     `SELECT * FROM ${table}`
+    return query
+}
+
+const selectById = (table, id) => {
+    const query = 
+    `SELECT * FROM ${table}
+    WHERE id = ${id}`
     return query
 }
 
@@ -24,6 +30,7 @@ const updateData = (table, jsonData) => {
 
 module.exports = {
     selectAllItems,
+    selectById,
     insertData, 
     updateData
 }

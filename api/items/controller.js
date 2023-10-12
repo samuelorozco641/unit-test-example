@@ -3,6 +3,14 @@ module.exports = (injectedDB) => {
     let data = injectedDB
 
     function list (TABLA) {
+        return data.listAll(TABLA);
+    };
+
+    function listById (TABLA, ID) {
+        return data.listById(TABLA, ID);
+    };
+
+    function listRemote (TABLA) {
         return data.listAllRemote(TABLA);
     };
 
@@ -16,6 +24,7 @@ module.exports = (injectedDB) => {
 
     return {
         list,
+        listById,
         addElement, 
         updateElement
     };

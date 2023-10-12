@@ -12,7 +12,7 @@ module.exports = {
     postgresql: {
         host: process.env.POSTGRESQL_HOST || 'localhost',
         user: process.env.POSTGRESQL_USER || 'postgres',
-        password: process.env.POSTGRESQL_PASSWORD || '',
-        database: process.env.POSTGRESQL_DB || ''
+        password: process.env.POSTGRESQL_PASSWORD || 'David2094*',
+        database: process.env.POSTGRESQL_DB || 'back-tool'
     },
 }
