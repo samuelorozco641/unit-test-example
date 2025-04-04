@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
 
-app.use('/house', items);
+app.use('/elements', items);
 
 app.listen(config.api.port, () =>{
     console.log("Server Run on port: "+ config.api.port );

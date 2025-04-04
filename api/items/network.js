@@ -2,7 +2,9 @@ const { Router } = require('express');
 const response = require('../../network/response')
 const router = Router();
 const ctrl = require('./index');
-const tableInjected = 'houses'
+const {tiMonth} = require('../../calculators/environment')
+
+const tableInjected = 'my_table'
 
 router.get('/list', async (req, res) => {
     try {
@@ -13,6 +15,16 @@ router.get('/list', async (req, res) => {
         response.error(req, res, error.message, 500); 
     }
 })
+
+
+router.get('/list2', async (req, res) => {
+    try {
+        response.success(req, res, tiMonth(1.4), 200);    
+    } catch (error) {
+        response.error(req, res, error.message, 500); 
+    }
+})
+
 
 router.get('/:id', async (req, res) => {
     try {
@@ -49,5 +61,6 @@ router.put('/update', async (req, res) => {
         response.error(req, res, error.message, 500);
     }
 });
+
 
 module.exports = router ;
