@@ -3,6 +3,7 @@ const response = require('../../network/response')
 const router = Router();
 const ctrl = require('./index');
 const {tiMonth, fuelEnergySelector, electricalConsumption, costElectricalKM, combustionConsumption, fuelConsumption, fuelEfficiency, fuelCostKm, energyKm, emisionKm, savedEnergy, avoidedEmissions, monthlySavings, annualSavings, youngTree, oldTree, energyH2Cylinders, energyH2LowPresure, energyConsumed, hydrogenMass, litersRequired} = require('../../calculators/environment')
+const dummyDataset = require('../../database/dummyDataset')
 
 const tableInjected = 'my_table'
 
