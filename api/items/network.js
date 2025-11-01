@@ -31,8 +31,8 @@ router.get('/environment/fuelEnergySelector/:fuel', (req, res) => {
 // electricalConsumption expects two numeric args (ejemplo: voltage, current)
 router.get('/environment/electricalConsumption', (req, res) => {
   try {
-    const voltage = pFloat(req.query.voltage, 81.14);
-    const current = pFloat(req.query.current, 14.7);
+    const voltage = Number(req.query.voltage, 81.14);
+    const current = Number(req.query.current, 14.7);
     const out = electricalConsumption(voltage, current);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -43,8 +43,8 @@ router.get('/environment/electricalConsumption', (req, res) => {
 // costElectricalKM expects (electrical_consumption, pricePerKwh)
 router.get('/environment/costElectricalKM', (req, res) => {
   try {
-    const electrical_consumption = pFloat(req.query.electrical_consumption);
-    const price = pFloat(req.query.price, 12);
+    const electrical_consumption = Number(req.query.electrical_consumption);
+    const price = Number(req.query.price, 12);
     const out = costElectricalKM(electrical_consumption, price);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -55,7 +55,7 @@ router.get('/environment/costElectricalKM', (req, res) => {
 // combustionConsumption(electrical_consumption)
 router.get('/environment/combustionConsumption', (req, res) => {
   try {
-    const electrical_consumption = pFloat(req.query.electrical_consumption);
+    const electrical_consumption = Number(req.query.electrical_consumption);
     const out = combustionConsumption(electrical_consumption);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -66,8 +66,8 @@ router.get('/environment/combustionConsumption', (req, res) => {
 // fuelConsumption(combustion, factor)
 router.get('/environment/fuelConsumption', (req, res) => {
   try {
-    const combustion = pFloat(req.query.combustion);
-    const factor = pFloat(req.query.factor, 12);
+    const combustion = Number(req.query.combustion);
+    const factor = Number(req.query.factor, 12);
     const out = fuelConsumption(combustion, factor);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -78,7 +78,7 @@ router.get('/environment/fuelConsumption', (req, res) => {
 // fuelEfficiency(fuel_consumption)
 router.get('/environment/fuelEfficiency', (req, res) => {
   try {
-    const fuel_consumption = pFloat(req.query.fuel_consumption);
+    const fuel_consumption = Number(req.query.fuel_consumption);
     const out = fuelEfficiency(fuel_consumption);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -89,8 +89,8 @@ router.get('/environment/fuelEfficiency', (req, res) => {
 // fuelCostKm(km, fuel_consumption)
 router.get('/environment/fuelCostKm', (req, res) => {
   try {
-    const km = pFloat(req.query.km, 12);
-    const fuel_consumption = pFloat(req.query.fuel_consumption);
+    const km = Number(req.query.km, 12);
+    const fuel_consumption = Number(req.query.fuel_consumption);
     const out = fuelCostKm(km, fuel_consumption);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -101,7 +101,7 @@ router.get('/environment/fuelCostKm', (req, res) => {
 // energyKm(combustion)
 router.get('/environment/energyKm', (req, res) => {
   try {
-    const combustion = pFloat(req.query.combustion);
+    const combustion = Number(req.query.combustion);
     const out = energyKm(combustion);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -112,8 +112,8 @@ router.get('/environment/energyKm', (req, res) => {
 // emisionKm(km, energy_km) OR emisionKm(12, energy_km) - ajusta según tu firma
 router.get('/environment/emisionKm', (req, res) => {
   try {
-    const km = pFloat(req.query.km, 12);
-    const energy_km = pFloat(req.query.energy_km);
+    const km = Number(req.query.km, 12);
+    const energy_km = Number(req.query.energy_km);
     const out = emisionKm(km, energy_km);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -124,9 +124,9 @@ router.get('/environment/emisionKm', (req, res) => {
 // savedEnergy(combustion, electrical_consumption, factor)
 router.get('/environment/savedEnergy', (req, res) => {
   try {
-    const combustion = pFloat(req.query.combustion);
-    const electrical_consumption = pFloat(req.query.electrical_consumption);
-    const factor = pFloat(req.query.factor, 12);
+    const combustion = Number(req.query.combustion);
+    const electrical_consumption = Number(req.query.electrical_consumption);
+    const factor = Number(req.query.factor, 12);
     const out = savedEnergy(combustion, electrical_consumption, factor);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -137,8 +137,8 @@ router.get('/environment/savedEnergy', (req, res) => {
 // avoidedEmissions(emision_km, factor)
 router.get('/environment/avoidedEmissions', (req, res) => {
   try {
-    const emision_km = pFloat(req.query.emision_km);
-    const factor = pFloat(req.query.factor, 12);
+    const emision_km = Number(req.query.emision_km);
+    const factor = Number(req.query.factor, 12);
     const out = avoidedEmissions(emision_km, factor);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -149,9 +149,9 @@ router.get('/environment/avoidedEmissions', (req, res) => {
 // monthlySavings(fuel_cost_km, costElectrical_Km, factor)
 router.get('/environment/monthlySavings', (req, res) => {
   try {
-    const fuel_cost_km = pFloat(req.query.fuel_cost_km);
-    const costElectrical_Km = pFloat(req.query.costElectrical_Km);
-    const factor = pFloat(req.query.factor, 12);
+    const fuel_cost_km = Number(req.query.fuel_cost_km);
+    const costElectrical_Km = Number(req.query.costElectrical_Km);
+    const factor = Number(req.query.factor, 12);
     const out = monthlySavings(fuel_cost_km, costElectrical_Km, factor);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -162,8 +162,8 @@ router.get('/environment/monthlySavings', (req, res) => {
 // annualSavings(monthly_savings, ipc)
 router.get('/environment/annualSavings', (req, res) => {
   try {
-    const monthly_savings = pFloat(req.query.monthly_savings);
-    const ipc = pFloat(req.query.ipc);
+    const monthly_savings = Number(req.query.monthly_savings);
+    const ipc = Number(req.query.ipc);
     const out = annualSavings(monthly_savings, ipc);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -174,7 +174,7 @@ router.get('/environment/annualSavings', (req, res) => {
 // youngTree / oldTree
 router.get('/environment/youngTree', (req, res) => {
   try {
-    const avoided_emissions = pFloat(req.query.avoided_emissions);
+    const avoided_emissions = Number(req.query.avoided_emissions);
     const out = youngTree(avoided_emissions);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -184,7 +184,7 @@ router.get('/environment/youngTree', (req, res) => {
 
 router.get('/environment/oldTree', (req, res) => {
   try {
-    const avoided_emissions = pFloat(req.query.avoided_emissions);
+    const avoided_emissions = Number(req.query.avoided_emissions);
     const out = oldTree(avoided_emissions);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -195,7 +195,7 @@ router.get('/environment/oldTree', (req, res) => {
 // H2 related
 router.get('/environment/energyH2Cylinders', (req, res) => {
   try {
-    const cylinders = pFloat(req.query.cylinders, 10);
+    const cylinders = Number(req.query.cylinders, 10);
     const out = energyH2Cylinders(cylinders);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -205,7 +205,7 @@ router.get('/environment/energyH2Cylinders', (req, res) => {
 
 router.get('/environment/energyH2LowPresure', (req, res) => {
   try {
-    const value = pFloat(req.query.value, 10);
+    const value = Number(req.query.value, 10);
     const out = energyH2LowPresure(value);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -215,7 +215,7 @@ router.get('/environment/energyH2LowPresure', (req, res) => {
 
 router.get('/environment/energyConsumed', (req, res) => {
   try {
-    const energy = pFloat(req.query.energy);
+    const energy = Number(req.query.energy);
     const out = energyConsumed(energy);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -225,7 +225,7 @@ router.get('/environment/energyConsumed', (req, res) => {
 
 router.get('/environment/hydrogenMass', (req, res) => {
   try {
-    const energy = pFloat(req.query.energy);
+    const energy = Number(req.query.energy);
     const out = hydrogenMass(energy);
     response.success(req, res, out, 200);
   } catch (err) {
@@ -235,7 +235,7 @@ router.get('/environment/hydrogenMass', (req, res) => {
 
 router.get('/environment/litersRequired', (req, res) => {
   try {
-    const hydrogen_mass = pFloat(req.query.hydrogen_mass);
+    const hydrogen_mass = Number(req.query.hydrogen_mass);
     const out = litersRequired(hydrogen_mass);
     response.success(req, res, out, 200);
   } catch (err) {
