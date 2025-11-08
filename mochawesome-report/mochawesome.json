@@ -1,23 +1,472 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2025-05-03T15:45:48.920Z",
-    "end": "2025-05-03T15:45:48.921Z",
-    "duration": 1,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "suites": 6,
+    "tests": 16,
+    "passes": 13,
+    "pending": 2,
+    "failures": 1,
+    "start": "2025-11-08T12:03:43.990Z",
+    "end": "2025-11-08T12:03:44.003Z",
+    "duration": 13,
+    "testsRegistered": 16,
+    "passPercent": 92.85714285714286,
+    "pendingPercent": 12.5,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "7820a722-92a4-4c20-912c-56e5875b2d2e",
+      "title": "",
+      "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+      "file": "/test/env_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0bf82008-706a-4384-9a35-51ef3d533e10",
+          "title": "Environment Calculations",
+          "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+          "file": "/test/env_test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "env_ipc",
+              "fullTitle": "Environment Calculations env_ipc",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "assert.strictEqual(tiMonth(2.8), 0.0023039138595752906);",
+              "err": {},
+              "uuid": "c6d1acaa-055d-4a52-afb9-14b99b4d97c7",
+              "parentUUID": "0bf82008-706a-4384-9a35-51ef3d533e10",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "fuelConsumption Test",
+              "fullTitle": "Environment Calculations fuelConsumption Test",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "assert.strictEqual(\n  fuelConsumption(\n    combustion_consumption,\n    fuel_selector[\"fuel_energy\"]\n  ),\n  0.04102081879859657\n);",
+              "err": {},
+              "uuid": "72541893-3a52-4d96-8ee6-fcbe685f7dd8",
+              "parentUUID": "0bf82008-706a-4384-9a35-51ef3d533e10",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "1fec7d6d-cb2b-4acb-8e58-e8bc7e64de51",
+              "title": "FuelEnergySelector collection",
+              "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+              "file": "/test/env_test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "gasoline case",
+                  "fullTitle": "Environment Calculations FuelEnergySelector collection gasoline case",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.deepStrictEqual(fuelEnergySelector(\"gasoline\"), {\n  \"fuel_price\": 16700,\n  \"fuel_energy\": 35.58,\n  \"emision_factor\": 69.25\n});",
+                  "err": {},
+                  "uuid": "fdc7aed1-02bc-4507-9ea6-673a198df2a4",
+                  "parentUUID": "1fec7d6d-cb2b-4acb-8e58-e8bc7e64de51",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "diesel case",
+                  "fullTitle": "Environment Calculations FuelEnergySelector collection diesel case",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.deepStrictEqual(fuelEnergySelector(\"diesel\"), {\n  \"fuel_price\": 11795,\n  \"fuel_energy\": 40.7,\n  \"emision_factor\": 74.01\n});",
+                  "err": {},
+                  "uuid": "38303321-d8df-4eea-a006-eaa9cf975942",
+                  "parentUUID": "1fec7d6d-cb2b-4acb-8e58-e8bc7e64de51",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "fdc7aed1-02bc-4507-9ea6-673a198df2a4",
+                "38303321-d8df-4eea-a006-eaa9cf975942"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f2e585ec-66da-4eb7-845b-87f27ca8f04a",
+              "title": "costElectricalKM Test",
+              "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+              "file": "/test/env_test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Calcular el costo usando consumo y precio de energía",
+                  "fullTitle": "Environment Calculations costElectricalKM Test Calcular el costo usando consumo y precio de energía",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.strictEqual(costElectricalKM(electrical_consumption, 200), 90.155555555555556);",
+                  "err": {},
+                  "uuid": "c7b78147-923c-43ca-aa3e-8b8a0313b449",
+                  "parentUUID": "f2e585ec-66da-4eb7-845b-87f27ca8f04a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c7b78147-923c-43ca-aa3e-8b8a0313b449"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "97432c34-c618-4750-a305-8f61b4654300",
+              "title": "Environment adicional - cálculos",
+              "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+              "file": "/test/env_test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "fuelEfficiency calcula 1 / fuelConsumption",
+                  "fullTitle": "Environment Calculations Environment adicional - cálculos fuelEfficiency calcula 1 / fuelConsumption",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const fuel_cons = fuelConsumption(combustion_consumption, fuel_selector.fuel_energy);\nassert.strictEqual(fuelEfficiency(fuel_cons), 1 / fuel_cons);",
+                  "err": {},
+                  "uuid": "ca55ef79-ac8d-4d24-a32e-6917a892a307",
+                  "parentUUID": "97432c34-c618-4750-a305-8f61b4654300",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "fuelCostKm calcula fuel_price * fuel_consumption",
+                  "fullTitle": "Environment Calculations Environment adicional - cálculos fuelCostKm calcula fuel_price * fuel_consumption",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const fuel_cons = fuelConsumption(combustion_consumption, fuel_selector.fuel_energy);\nassert.strictEqual(fuelCostKm(fuel_selector.fuel_price, fuel_cons), fuel_selector.fuel_price * fuel_cons);",
+                  "err": {},
+                  "uuid": "1504abd2-ae6b-40e7-93ab-6ae8aeb2253a",
+                  "parentUUID": "97432c34-c618-4750-a305-8f61b4654300",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "energyKm y emisionKm calculan correctamente",
+                  "fullTitle": "Environment Calculations Environment adicional - cálculos energyKm y emisionKm calculan correctamente",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const energy_km = energyKm(combustion_consumption);\nassert.strictEqual(energy_km, combustion_consumption * (3.6 * (10 ** 6)));\nconst emission_km = emisionKm(fuel_selector.emision_factor, energy_km);\nassert.strictEqual(emission_km, (fuel_selector.emision_factor * energy_km) / (1 * (10 ** 6)));",
+                  "err": {},
+                  "uuid": "9c9f9dc5-ec44-4da5-9911-8b41b55fe519",
+                  "parentUUID": "97432c34-c618-4750-a305-8f61b4654300",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "savedEnergy y avoidedEmissions con uso anual",
+                  "fullTitle": "Environment Calculations Environment adicional - cálculos savedEnergy y avoidedEmissions con uso anual",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const annual_use = 12000;\nconst saved = savedEnergy(combustion_consumption, electrical_consumption, annual_use);\nassert.strictEqual(saved, (combustion_consumption - electrical_consumption) * annual_use);\nconst emission_km = emisionKm(fuel_selector.emision_factor, energyKm(combustion_consumption));\nconst avoided = avoidedEmissions(emission_km, annual_use);\nassert.strictEqual(avoided, (emission_km * annual_use) / (1 * (10 ** 6)));",
+                  "err": {},
+                  "uuid": "1ff031ab-b06a-4009-b1e7-037c1bcfb1ac",
+                  "parentUUID": "97432c34-c618-4750-a305-8f61b4654300",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "monthlySavings y annualSavings funcionan según las fórmulas",
+                  "fullTitle": "Environment Calculations Environment adicional - cálculos monthlySavings y annualSavings funcionan según las fórmulas",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const annual_use = 12000;\nconst fuel_cons = fuelConsumption(combustion_consumption, fuel_selector.fuel_energy);\nconst fuel_cost_km = fuelCostKm(fuel_selector.fuel_price, fuel_cons);\nconst cost_elec_km = costElectricalKM(electrical_consumption, 200);\nconst monthly = monthlySavings(fuel_cost_km, cost_elec_km, annual_use);\nassert.strictEqual(monthly, (fuel_cost_km - cost_elec_km) * (annual_use / 12));\nconst ipc_data = tiMonth(2.8);\nconst annual = annualSavings(monthly, ipc_data);\nassert.strictEqual(annual, monthly * ((((1 + ipc_data) ** 12) - 1) / (ipc_data)));",
+                  "err": {},
+                  "uuid": "5ecdb892-ab15-46a8-a6f7-0041ff94a042",
+                  "parentUUID": "97432c34-c618-4750-a305-8f61b4654300",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ca55ef79-ac8d-4d24-a32e-6917a892a307",
+                "1504abd2-ae6b-40e7-93ab-6ae8aeb2253a",
+                "9c9f9dc5-ec44-4da5-9911-8b41b55fe519",
+                "1ff031ab-b06a-4009-b1e7-037c1bcfb1ac",
+                "5ecdb892-ab15-46a8-a6f7-0041ff94a042"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "52e9ad5c-23aa-438e-bcc6-ccdaf87afa46",
+              "title": "Resultados de ejemplo (pass / fail / skipped)",
+              "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+              "file": "/test/env_test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "prueba que pasa (pass)",
+                  "fullTitle": "Environment Calculations Resultados de ejemplo (pass / fail / skipped) prueba que pasa (pass)",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.strictEqual(2 + 2, 4);",
+                  "err": {},
+                  "uuid": "64096a92-9cdd-469d-9257-23c4aa0e6988",
+                  "parentUUID": "52e9ad5c-23aa-438e-bcc6-ccdaf87afa46",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "prueba saltada (skipped)",
+                  "fullTitle": "Environment Calculations Resultados de ejemplo (pass / fail / skipped) prueba saltada (skipped)",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "8c48d042-fe3b-43bd-9fd6-b3b26ec45046",
+                  "parentUUID": "52e9ad5c-23aa-438e-bcc6-ccdaf87afa46",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "prueba intencionalmente fallida (fail)",
+                  "fullTitle": "Environment Calculations Resultados de ejemplo (pass / fail / skipped) prueba intencionalmente fallida (fail)",
+                  "timedOut": false,
+                  "duration": 3,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "assert.strictEqual(costElectricalKM(electrical_consumption, 200), 0);",
+                  "err": {
+                    "message": "AssertionError: Expected values to be strictly equal:\n+ actual - expected\n\n+ 90.15555555555555\n- 0\n",
+                    "estack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 90.15555555555555\n- 0\n\n    at Context.<anonymous> (test/env_test.js:124:14)\n    at process.processImmediate (node:internal/timers:485:21)",
+                    "diff": "- 90.15555555555555\n+ 0\n"
+                  },
+                  "uuid": "3129bf8c-6a77-41bd-8e76-0e1809e2495f",
+                  "parentUUID": "52e9ad5c-23aa-438e-bcc6-ccdaf87afa46",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "prueba cancelada (simulada con skip)",
+                  "fullTitle": "Environment Calculations Resultados de ejemplo (pass / fail / skipped) prueba cancelada (simulada con skip)",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "07bdd63c-e8fe-465b-971e-ef69eb2f0bf0",
+                  "parentUUID": "52e9ad5c-23aa-438e-bcc6-ccdaf87afa46",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "64096a92-9cdd-469d-9257-23c4aa0e6988"
+              ],
+              "failures": [
+                "3129bf8c-6a77-41bd-8e76-0e1809e2495f"
+              ],
+              "pending": [
+                "8c48d042-fe3b-43bd-9fd6-b3b26ec45046",
+                "07bdd63c-e8fe-465b-971e-ef69eb2f0bf0"
+              ],
+              "skipped": [],
+              "duration": 3,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d819b618-4c4c-4863-83ba-050fde07b38d",
+              "title": "Funciones async: árboles e H2",
+              "fullFile": "/workspaces/unit-test-example/test/env_test.js",
+              "file": "/test/env_test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "youngTree y oldTree devuelven NaN",
+                  "fullTitle": "Environment Calculations Funciones async: árboles e H2 youngTree y oldTree devuelven NaN",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const y = await youngTree(123);\nconst o = await oldTree(123);\nassert.ok(Number.isNaN(y));\nassert.ok(Number.isNaN(o));",
+                  "err": {},
+                  "uuid": "f64cd309-61f7-468f-b571-2671979da0da",
+                  "parentUUID": "d819b618-4c4c-4863-83ba-050fde07b38d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "energyH2*, energyConsumed, hydrogenMass y litersRequired devuelven NaN",
+                  "fullTitle": "Environment Calculations Funciones async: árboles e H2 energyH2*, energyConsumed, hydrogenMass y litersRequired devuelven NaN",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const eCyl = await energyH2Cylinders(100);\nconst eLow = await energyH2LowPresure(eCyl);\nconst eCons = await energyConsumed(eLow);\nconst hMass = await hydrogenMass(eLow);\nconst liters = await litersRequired(hMass);\nassert.ok(Number.isNaN(eCyl));\nassert.ok(Number.isNaN(eLow));\nassert.ok(Number.isNaN(eCons));\nassert.ok(Number.isNaN(hMass));\nassert.ok(Number.isNaN(liters));",
+                  "err": {},
+                  "uuid": "32ee310b-7f7c-4f8d-858c-9905e46add96",
+                  "parentUUID": "d819b618-4c4c-4863-83ba-050fde07b38d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f64cd309-61f7-468f-b571-2671979da0da",
+                "32ee310b-7f7c-4f8d-858c-9905e46add96"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "c6d1acaa-055d-4a52-afb9-14b99b4d97c7",
+            "72541893-3a52-4d96-8ee6-fcbe685f7dd8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
@@ -33,11 +482,11 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "7.1.3"
+      "version": "7.1.4"
     },
     "marge": {
       "options": null,
-      "version": "6.2.0"
+      "version": "6.3.2"
     }
   }
 }
